@@ -12,38 +12,41 @@
         android:padding="16dp"
         android:background="#CCCCCC"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <!-- Set height FrameLayout menjadi 0dp dan berikan weight -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="8dp"/>
+        android:layout_weight="1" />
 
     <LinearLayout
+        android:id="@+id/lL_navigasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#CCCCCC">
+        android:background="#CCCCCC"
+        android:orientation="horizontal">
 
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@android:drawable/btn_star"
-            android:contentDescription="Bookmark"/>
+            android:contentDescription="Bookmark"
+            android:src="@android:drawable/btn_star" />
 
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@android:drawable/ic_menu_share"
-            android:contentDescription="Share"/>
+            android:contentDescription="Share"
+            android:src="@android:drawable/ic_menu_share" />
 
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@android:drawable/ic_menu_edit"
-            android:contentDescription="Edit"/>
+            android:contentDescription="Edit"
+            android:src="@android:drawable/ic_menu_edit" />
+
     </LinearLayout>
+
 </LinearLayout>
