@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC"
+        android:padding="16dp"
+        android:text="Lacak Peminjaman"
+        android:textSize="24sp"/>
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/ongoing_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#DCD9D9"
+            android:text="Berlangsung"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/completed_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#DCD9D9"
+            android:text="Selesai"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- Card Layout for Completed Book -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#DDDDDD"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Return Date -->
+        <Button
+            android:id="@+id/return_date_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#EEEEEE"
+            android:text="Jatuh Tempo xx/xx/xxxx"
+            android:textColor="#000000" />
+
+        <!-- Image Placeholder -->
+        <ImageView
+            android:id="@+id/book_image"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#888888" />
+
+        <!-- Book Title -->
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:text="JUDUL BUKU"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Status Button -->
+        <Button
+            android:id="@+id/status_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sudah Dikembalikan"
+            android:textColor="#000000"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+</LinearLayout>
