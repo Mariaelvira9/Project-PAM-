@@ -1,35 +1,40 @@
 package com.example.project;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-public class TrackingActivity extends AppCompatActivity {
+public class TrackFragment extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tracking);
-        Button returnButton = findViewById(R.id.status_button);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_tracking, container, false);
+
+        Button returnButton = view.findViewById(R.id.status_button);
 
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(TrackingActivity.this)
+                new AlertDialog.Builder(requireActivity())
                         .setTitle("Konfirmasi Pengembalian")
                         .setMessage("Apakah anda yakin ingin mengembalikan buku ini?")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
-                                Toast.makeText(TrackingActivity.this, "Buku berhasil dikembalikan!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(requireActivity(), "Buku berhasil dikembalikan!", Toast.LENGTH_SHORT).show();
 
-                                Intent intent = new Intent(TrackingActivity.this, TrackingCompletedActivity.class);
-                                startActivity(intent);
+                                TrackCompletedFragment trackCompletedFragment = new TrackCompletedFragment();
+                                requireActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.fragContainer, trackCompletedFragment)
+                                        .addToBackStack(null)
+                                        .commit();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -41,5 +46,7 @@ public class TrackingActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        return view;
     }
 }

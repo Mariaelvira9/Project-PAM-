@@ -1,137 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daftar Buku"
-        android:textSize="24sp"
-        android:padding="16dp"
-        android:background="#CCCCCC"/>
-
-    <ScrollView
-        android:layout_width="match_parent"
+    <FrameLayout
+        android:id="@+id/fragContainer"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:contentDescription="Daftar buku yang tersedia">
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="8dp">
-
-            <!-- Row 1 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <View
-                    android:id="@+id/bookItem1"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 1"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-                <View
-                    android:id="@+id/bookItem2"
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 2"
-                    android:clickable="true"
-                    android:focusable="true" />
-
-            </LinearLayout>
-
-            <!-- Row 2 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 3"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 4"/>
-
-            </LinearLayout>
-
-            <!-- Row 3 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 5"/>
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="150dp"
-                    android:layout_weight="1"
-                    android:background="#DDDDDD"
-                    android:layout_margin="8dp"
-                    android:contentDescription="Buku 6"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#CCCCCC">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navbar"
+        />
 
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/btn_star"
-            android:contentDescription="Bookmark"/>
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_menu_share"
-            android:contentDescription="Share"/>
-
-        <ImageButton
-            android:id="@+id/editButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="Edit"
-            app:srcCompat="@android:drawable/ic_menu_edit" />
-    </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

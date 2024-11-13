@@ -21,15 +21,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TrackingActivity"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".TrackingCompletedActivity"
-            android:exported="true">
-        </activity>
-
     </application>
-
 </manifest>
